@@ -1,0 +1,66 @@
+<div class="page-width">
+  <h1 class="main-title">Welcome to Panda Puzzle</h1>
+  
+  <div class="rte">
+    <p>{{ section.settings.welcome_text }}</p>
+  </div>
+
+  <div class="featured-resources">
+    <h2>Featured Resources</h2>
+    {% for block in section.blocks %}
+      {% if block.type == 'featured_resource' %}
+        <div class="featured-resource">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+          <a href="{{ block.settings.link }}" class="button">Learn More</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="quick-links">
+    <h2>Quick Links</h2>
+    <ul>
+      <li><a href="/pages/therapy">Therapy</a></li>
+      <li><a href="/pages/diagnosis">Diagnosis</a></li>
+      <li><a href="/pages/sensory">Sensory</a></li>
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Homepage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "welcome_text",
+      "label": "Welcome Text",
+      "default": "Panda Puzzle is your resource for autism, neurodiversity, and learning support."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_resource",
+      "name": "Featured Resource",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

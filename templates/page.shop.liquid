@@ -1,0 +1,65 @@
+<div class="page-width">
+  <h1>{{ page.title }}</h1>
+  
+  <div class="rte">
+    {{ page.content }}
+  </div>
+
+  <div class="product-categories">
+    <div class="product-category">
+      <h2>Sensory Tools</h2>
+      <p>{{ section.settings.sensory_tools_description }}</p>
+      <a href="{{ section.settings.sensory_tools_link }}" class="button">Shop Sensory Tools</a>
+    </div>
+
+    <div class="product-category">
+      <h2>Learning Aids</h2>
+      <p>{{ section.settings.learning_aids_description }}</p>
+      <a href="{{ section.settings.learning_aids_link }}" class="button">Shop Learning Aids</a>
+    </div>
+
+    <div class="product-category">
+      <h2>Books and Resources</h2>
+      <p>{{ section.settings.books_resources_description }}</p>
+      <a href="{{ section.settings.books_resources_link }}" class="button">Shop Books and Resources</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sensory_tools_description",
+      "label": "Sensory Tools Description"
+    },
+    {
+      "type": "url",
+      "id": "sensory_tools_link",
+      "label": "Sensory Tools Collection Link"
+    },
+    {
+      "type": "text",
+      "id": "learning_aids_description",
+      "label": "Learning Aids Description"
+    },
+    {
+      "type": "url",
+      "id": "learning_aids_link",
+      "label": "Learning Aids Collection Link"
+    },
+    {
+      "type": "text",
+      "id": "books_resources_description",
+      "label": "Books and Resources Description"
+    },
+    {
+      "type": "url",
+      "id": "books_resources_link",
+      "label": "Books and Resources Collection Link"
+    }
+  ]
+}
+{% endschema %}
