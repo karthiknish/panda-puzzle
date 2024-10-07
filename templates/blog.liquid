@@ -5,7 +5,9 @@
     <div class="blog-articles">
       {% for article in blog.articles %}
         <div class="blog-article">
-          <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+          <h2>
+            <a href="{{ article.url }}">{{ article.title }}</a>
+          </h2>
           <p>{{ article.published_at | date: '%B %d, %Y' }}</p>
           {% if article.excerpt.size > 0 %}
             <p>{{ article.excerpt }}</p>
@@ -18,7 +20,7 @@
     </div>
 
     {% if paginate.pages > 1 %}
-      {% include 'pagination' %}
+      {% render 'pagination' %}
     {% endif %}
   {% endpaginate %}
 </div>
