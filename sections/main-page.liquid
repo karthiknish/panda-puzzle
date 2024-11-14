@@ -1,4 +1,5 @@
-{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+https://file+.vscode-resource.vscode-cdn.net/Users/profici/Downloads/Panda%20Puzzle.jpg?version%3D1731579939304§
+{{- 'section-main-page.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -14,31 +15,72 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    Welcome to Panda Puzzle - Home
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <p>
-      At Panda Puzzle, we are dedicated to supporting individuals with autism and neurodiversity. Our mission is to
-      provide resources, guidance, and community for families navigating these unique challenges.
-    </p>
-    <h2>Key Links</h2>
-    <ul>
-      <li><a href="#about-us">About Us</a></li>
-      <li><a href="#autism-and-neurodiversity">Autism and Neurodiversity</a></li>
-      <li><a href="#communication">Communication Tools</a></li>
-      <li><a href="#visuals">Visual Aids</a></li>
-      <li><a href="#therapy-and-support">Therapy and Support</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#shop">Shop and Products</a></li>
-    </ul>
-    <h2>Featured Resources</h2>
-    <p>
-      Explore our collection of testimonials and resources designed to empower families and individuals on their
-      journey.
-    </p>
+<div class="page-width section-{{ section.id }}-padding">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>
+        Supporting Growth,<br>
+        <span class="orange-text">Embracing</span><br>
+        Differences
+      </h1>
+      <p>Discover our collection of developmental toys and tools designed to support every child's unique journey.</p>
+      <a href="#shop-now" class="button">Shop Now</a>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0885/1265/9770/files/Multicultural_Kids_Teddy_Bears.png?v=1731581897"
+        width="500"
+        height="500"
+      >
+    </div>
+  </div>
+
+  <!-- Popular Brands Section -->
+  <div class="brands-section">
+    <h2>Explore the Most Popular Toy <span class="orange-text">Brands</span> Kids Worldwide</h2>
+    <div class="brands-grid">
+      <div class="brand-card">
+        <img src="autism-neurodiversity.jpg" alt="Autism & Neurodiversity">
+        <h3>Autism & Neurodiversity</h3>
+        <a href="#learn-more" class="button-outline">Learn More</a>
+      </div>
+      <!-- Add other brand cards -->
+    </div>
+  </div>
+
+  <!-- Age-Appropriate Products Section -->
+  <div class="age-products-section">
+    <h2>Age-Appropriate Products for <span class="orange-text">Every Stage</span></h2>
+    <div class="age-slider">
+      <div class="age-card">
+        <img src="age-3-5.jpg" alt="Products for 3-5 years">
+        <h3>Products For 3-5 years</h3>
+      </div>
+      <!-- Add other age cards -->
+    </div>
+  </div>
+
+  <!-- Product Collection Section -->
+  <div class="product-collection">
+    <h2>Discover Our Entire Collection of <span class="orange-text">Products for Kids</span> of All Ages</h2>
+    <div class="product-grid">
+      {% for product in collections.featured.products limit: 6 %}
+        <div class="product-card">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          <p class="price">£{{ product.price | money_without_currency }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="testimonials-section">
+    <h2>Hear What Families Are Saying <span class="orange-text">About Their Journey</span></h2>
+    <div class="testimonials-grid">
+      <!-- Add testimonial cards -->
+    </div>
   </div>
 </div>
 
