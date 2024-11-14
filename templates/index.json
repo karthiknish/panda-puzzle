@@ -15,14 +15,14 @@
         "heading_y8KLF6": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Supporting Growth, <span>Embracing</span> Differences</strong>",
-            "heading_size": "h1"
+            "heading": "<strong>Supporting Growth, </strong><span style=\"text-decoration:underline\"><strong>Embracing</strong></span><strong> Differences</strong>",
+            "heading_size": "h0"
           }
         },
         "text_tw3JVz": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>At Panda Puzzle, we empower families and children by providing tailored support and resources, fostering a world where every unique journey is celebrated and nurtured.</p>",
             "text_style": "body"
           }
         },
