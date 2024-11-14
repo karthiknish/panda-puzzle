@@ -380,5 +380,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".disclosure{display:none !important;}"
+    ]
   }
 }
